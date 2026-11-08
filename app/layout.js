@@ -1,3 +1,5 @@
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import localFont from "next/font/local";
 import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
@@ -43,6 +45,8 @@ export default function RootLayout({ children }) {
         <Footer />
         <FloatingWhatsApp />
         <JsonLd data={getOrganizationSchema()} />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -8,6 +8,7 @@ FullElektrik için Next.js App Router ile geliştirilmiş, Türkçe ve responsiv
 - React 19
 - Tailwind CSS 4
 - Manrope (yerel font)
+- Vercel Web Analytics ve Speed Insights
 
 ## Başlangıç
 
@@ -45,6 +46,25 @@ npm run lint
 alanlarını düzenleyin. `NEXT_PUBLIC_SITE_URL` ortam değişkeni tanımlanırsa `siteUrl` yerine bu değer kullanılır.
 
 İletişim alanlarından biri boş bırakılırsa sitede gerçek olmayan bilgi gösterilmez; ilgili alanda düzenlenmesi gereken metin görünür. WhatsApp numarası tanımlanmadığında WhatsApp bağlantıları genel paylaşım ekranını açar.
+
+## Vercel ile Yayınlama
+
+Proje Vercel'e hazır yapılandırılmıştır (`vercel.json`). GitHub deposu Vercel'e bağlandığında `main` dalına yapılan her push otomatik olarak yayına alınır.
+
+1. [vercel.com/new](https://vercel.com/new) adresinden `Samettalha/fullelektrik` deposunu içe aktarın.
+2. Framework otomatik olarak Next.js seçilir; build ve output ayarlarını değiştirmeyin.
+3. Ortam değişkenleri:
+   - `NEXT_PUBLIC_SITE_URL` (isteğe bağlı): Özel alan adı için `https://www.alanadiniz.com`. Tanımlanmazsa Vercel'in üretim adresi otomatik kullanılır.
+4. Yayın sonrası proje panelinden **Analytics > Enable** ve **Speed Insights > Enable** adımlarını izleyerek ziyaretçi ve performans verilerini görmeye başlayın.
+
+Komut satırından yayınlamak için:
+
+```bash
+npx vercel login
+npx vercel --prod
+```
+
+Analytics ve Speed Insights bileşenleri `app/layout.js` içine eklenmiştir; ek paket kurulumu gerekmez.
 
 ## İçerik ve Görseller
 
